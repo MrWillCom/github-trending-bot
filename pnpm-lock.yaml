@@ -10,6 +10,12 @@ importers:
       axios:
         specifier: ^1.7.3
         version: 1.7.3
+      chalk:
+        specifier: ^5.3.0
+        version: 5.3.0
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
       jsdom:
         specifier: ^24.1.1
         version: 24.1.1
@@ -37,6 +43,13 @@ packages:
       {
         integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==,
       }
+
+  chalk@5.3.0:
+    resolution:
+      {
+        integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==,
+      }
+    engines: { node: ^12.17.0 || ^14.13 || >=16.0.0 }
 
   combined-stream@1.0.8:
     resolution:
@@ -110,6 +123,19 @@ packages:
       }
     engines: { node: '>= 6' }
 
+  fs-extra@11.2.0:
+    resolution:
+      {
+        integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==,
+      }
+    engines: { node: '>=14.14' }
+
+  graceful-fs@4.2.11:
+    resolution:
+      {
+        integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==,
+      }
+
   html-encoding-sniffer@4.0.0:
     resolution:
       {
@@ -155,6 +181,12 @@ packages:
     peerDependenciesMeta:
       canvas:
         optional: true
+
+  jsonfile@6.1.0:
+    resolution:
+      {
+        integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==,
+      }
 
   mime-db@1.52.0:
     resolution:
@@ -279,6 +311,13 @@ packages:
       }
     engines: { node: '>= 4.0.0' }
 
+  universalify@2.0.1:
+    resolution:
+      {
+        integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==,
+      }
+    engines: { node: '>= 10.0.0' }
+
   url-parse@1.5.10:
     resolution:
       {
@@ -365,6 +404,8 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
+  chalk@5.3.0: {}
+
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
@@ -395,6 +436,14 @@ snapshots:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+
+  fs-extra@11.2.0:
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+
+  graceful-fs@4.2.11: {}
 
   html-encoding-sniffer@4.0.0:
     dependencies:
@@ -448,6 +497,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  jsonfile@6.1.0:
+    dependencies:
+      universalify: 2.0.1
+    optionalDependencies:
+      graceful-fs: 4.2.11
+
   mime-db@1.52.0: {}
 
   mime-types@2.1.35:
@@ -498,6 +553,8 @@ snapshots:
       punycode: 2.3.1
 
   universalify@0.2.0: {}
+
+  universalify@2.0.1: {}
 
   url-parse@1.5.10:
     dependencies:
