@@ -1,23 +1,11 @@
-import fs from 'fs-extra'
-import path from 'path'
-import getTrending from './lib/getTrending.js'
 import chalk from 'chalk'
 
-const pad = n => (n < 10 ? '0' + n : n)
+import getTrending from './lib/getTrending.js'
+import saveToFile from './lib/saveToFile.js'
 
 const main = async () => {
   try {
     const trending = await getTrending()
-    const date = new Date()
-    const dest = path.join(
-      import.meta.dirname,
-      '../data/',
-      [
-        date.getUTCFullYear(),
-        pad(date.getUTCMonth() + 1),
-        pad(date.getUTCDate()),
-      ].join('-') + '.json',
-    )
 
     console.log(
       `Successfully fetched ${chalk.blue(trending.length)} trending repositories:`,
@@ -28,8 +16,7 @@ const main = async () => {
       )
     })
 
-    await fs.outputJSON(dest, trending)
-    console.log(`Saved to ${chalk.gray(dest)}.`)
+    await saveToFile(trending)
   } catch (error) {
     console.error(error)
   }
