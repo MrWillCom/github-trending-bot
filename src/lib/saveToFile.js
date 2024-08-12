@@ -13,7 +13,7 @@ const saveToFile = async trending => {
       date.getUTCFullYear(),
       pad(date.getUTCMonth() + 1),
       pad(date.getUTCDate()),
-    ].join('-') + '.json',
+    ].join('/') + '.json',
   )
 
   await fs.outputJSON(dest, trending)
