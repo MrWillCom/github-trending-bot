@@ -1,7 +1,9 @@
 import chalk from 'chalk'
+import 'dotenv/config'
 
 import getTrending from './lib/getTrending.js'
 import saveToFile from './lib/saveToFile.js'
+import sendToMastodon from './lib/sendToMastodon.js'
 
 const main = async () => {
   try {
@@ -17,6 +19,10 @@ const main = async () => {
     })
 
     await saveToFile(trending)
+
+    if (process.env.MASTODON_ENABLED === 'true') {
+      await sendToMastodon(trending)
+    }
   } catch (error) {
     console.error(error)
   }
