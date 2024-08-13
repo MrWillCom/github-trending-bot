@@ -52,7 +52,8 @@ const getTrending = async () => {
         el
           .querySelector('span.float-sm-right')
           .textContent.trim()
-          .replace(' stars today', ''),
+          .replace(' stars today', '')
+          .replace(',', ''),
         10,
       )
 
