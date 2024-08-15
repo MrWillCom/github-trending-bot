@@ -6,11 +6,11 @@ const sendToMastodon = async trending => {
     accessToken: process.env.MASTODON_ACCESS_TOKEN,
   })
 
-  const title = "Today's 📈:\n\n"
+  const title = "📈 Today's GitHub Trending:\n\n"
 
   var list = trending.map(
     (repo, i) =>
-      `${i + 1}. https://github.com/${repo.owner}/${repo.name} - ${repo.language ? repo.language + ', ' : ''}${repo.starsToday} ⭐ today\n`,
+      `${i + 1}. https://github.com/${repo.owner}/${repo.name} - ${repo.language ? repo.language + ', ' : ''}${repo.starsToday} stars today\n`,
   )
 
   var status = title
