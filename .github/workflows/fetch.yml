@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: Fetech and Save Trending
+    name: Fetch and Save Trending
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
