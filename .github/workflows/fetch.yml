@@ -13,16 +13,18 @@ jobs:
     name: Fetch and Save Trending
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
-      - name: Install pnpm
-        run: npm i pnpm -g
+          node-version: '24'
+      - name: Install corepack
+        run: npm install -g corepack
+      - name: Install package manager
+        run: corepack install
       - name: Install Dependencies
-        run: pnpm install
+        run: corepack pnpm install
       - name: Run Scripts
-        run: pnpm start
+        run: corepack pnpm start
         env:
           MASTODON_ENABLED: ${{ vars.MASTODON_ENABLED }}
           MASTODON_URL: ${{ vars.MASTODON_URL }}
