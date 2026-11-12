@@ -5,9 +5,7 @@ const getTrending = async () => {
   try {
     const response = await axios.get('https://github.com/trending')
     const dom = new JSDOM(response.data)
-    const items = dom.window.document.querySelectorAll(
-      'main>.container-lg .Box article.Box-row',
-    )
+    const items = dom.window.document.querySelectorAll('main>.container-lg .Box article.Box-row')
 
     let repos = []
     items.forEach(el => {
@@ -24,22 +22,14 @@ const getTrending = async () => {
       repo.description = el.querySelector('p.col-9')?.textContent.trim() ?? null
 
       repo.language =
-        el
-          .querySelector('[itemprop="programmingLanguage"]')
-          ?.textContent.trim() ?? null
+        el.querySelector('[itemprop="programmingLanguage"]')?.textContent.trim() ?? null
 
       repo.stars = parseInt(
-        el
-          .querySelector('[aria-label="star"]')
-          .parentNode.textContent.trim()
-          .replace(',', ''),
+        el.querySelector('[aria-label="star"]').parentNode.textContent.trim().replace(',', ''),
         10,
       )
       repo.forks = parseInt(
-        el
-          .querySelector('[aria-label="fork"]')
-          .parentNode.textContent.trim()
-          .replace(',', ''),
+        el.querySelector('[aria-label="fork"]').parentNode.textContent.trim().replace(',', ''),
         10,
       )
 

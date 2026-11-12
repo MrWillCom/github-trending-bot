@@ -9,11 +9,8 @@ const saveToFile = async trending => {
   const dest = path.join(
     import.meta.dirname,
     '../../data/',
-    [
-      date.getUTCFullYear(),
-      pad(date.getUTCMonth() + 1),
-      pad(date.getUTCDate()),
-    ].join('/') + '.json',
+    [date.getUTCFullYear(), pad(date.getUTCMonth() + 1), pad(date.getUTCDate())].join('/') +
+      '.json',
   )
 
   await fs.outputJSON(dest, trending)
