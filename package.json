@@ -5,15 +5,15 @@
     "format": "prettier . --write"
   },
   "devDependencies": {
-    "prettier": "3.9.5"
+    "prettier": "3.9.10"
   },
   "dependencies": {
-    "axios": "^1.18.1",
-    "chalk": "^5.6.2",
-    "dotenv": "^17.4.2",
-    "fs-extra": "^11.3.6",
-    "jsdom": "^29.1.1",
-    "masto": "^7.12.0"
+    "axios": "^1.21.1",
+    "chalk": "^6.0.1",
+    "dotenv": "^18.0.10",
+    "fs-extra": "^11.4.1",
+    "jsdom": "^31.0.0",
+    "masto": "^8.0.0"
   },
-  "packageManager": "pnpm@11.13.1+sha512.b2fc7683b8a6525414e7d13e1ba28caaddde96bf66ec540bfaeb7e702b81f3e0be4d1f295edf7f9fe0396740a8dce4509c582ddf79891f4543fea32d37645f25"
+  "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3"
 }
